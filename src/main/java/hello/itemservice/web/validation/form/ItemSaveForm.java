@@ -20,9 +20,4 @@ public class ItemSaveForm {
     @Max(9999)
     private Integer quantity;
 
-    public ItemSaveForm(String itemName, Integer price, Integer quantity) {
-        this.itemName = itemName;
-        this.price = price;
-        this.quantity = quantity;
-    }
 }

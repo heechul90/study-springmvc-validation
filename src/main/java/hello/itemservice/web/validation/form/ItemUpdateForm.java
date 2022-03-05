@@ -22,10 +22,4 @@ public class ItemUpdateForm {
     @NotNull
     private Integer quantity;
 
-    public ItemUpdateForm(Long id, String itemName, Integer price, Integer quantity) {
-        this.id = id;
-        this.itemName = itemName;
-        this.price = price;
-        this.quantity = quantity;
-    }
 }
