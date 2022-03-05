@@ -181,6 +181,7 @@ public class ValidationItemControllerV2 {
         }
 
         //검증에 실패하면 다시 입력 폼으로
+        //맨 처음으로 놓고 보통 한다
         if (bindingResult.hasErrors()) {
             log.info("errors = {}", bindingResult);
             return "validation/v2/addForm";
