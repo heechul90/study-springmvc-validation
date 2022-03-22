@@ -47,7 +47,7 @@ public class ValidationItemControllerV4 {
     }
 
     @PostMapping("/add")
-    public String addItem(@Validated @ModelAttribute("item") ItemSaveForm form, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String addItem(@Validated @ModelAttribute("item") ItemSaveForm form, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
 
         //특정 필드가 아닌 복합 룰 검증
         if (form.getPrice() != null && form.getQuantity() != null) {
@@ -61,6 +61,7 @@ public class ValidationItemControllerV4 {
         //맨 처음으로 놓고 보통 한다
         if (bindingResult.hasErrors()) {
             log.info("errors = {}", bindingResult);
+            model.addAttribute("pageIndex", 1);
             return "validation/v4/addForm";
         }
 
